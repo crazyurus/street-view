@@ -1,0 +1,130 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.csssprite {
+    display: none;
+}
+#container {
+    width: 100%;
+    height: 100%;
+}
+header {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #fff;
+    font-size: 1rem;
+    white-space: nowrap;
+    text-shadow: rgb(0, 0, 0) 0px 0px 3.2px;
+    z-index: 9;
+}
+header > p {
+    line-height: 1.8;
+    margin: 0;
+}
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 9; 
+    overflow: hidden;
+    opacity: 1; 
+    background: none 0px 0px rgba(0, 0, 0, 0.298039); 
+    border-style: solid; 
+    border-color: rgb(0, 0, 0); 
+    border-width: 0px; 
+    border-radius: 0px; 
+    width: 100%;
+    height: 110px;
+    text-align: center;
+}
+footer > div {
+    position: absolute; 
+    z-index: 10; 
+    overflow: visible; 
+    cursor: pointer; 
+    pointer-events: auto; 
+    opacity: 1;
+    width: 100%;
+    height: 110px; 
+    background-position: 0px 0px;
+}
+footer > div > div {
+    float: left;
+    position: relative;
+    z-index: 10; 
+    overflow: visible; 
+    cursor: pointer; 
+    pointer-events: auto; 
+    opacity: 1; 
+    border-style: solid; 
+    background-color: rgba(255, 255, 255, 0.298039);
+    border-color: rgba(255, 255, 255, 0.0980392); 
+    border-width: 1px; 
+    border-radius: 2px; 
+    width: 15%; 
+    height: 90px; 
+    background-position: 0px 0px;
+    margin: 9px 0.55%;
+}
+footer > div > .active {
+    background-color: rgb(246, 166, 0);
+}
+footer > div > div > .image {
+    position: absolute;
+    z-index: 10; 
+    overflow: visible; 
+    cursor: pointer; 
+    pointer-events: auto; 
+    opacity: 1; 
+    width: 100%; 
+    height: 90px; 
+    background-position: 0px 0px; 
+    background-size: 100% 90px; 
+}
+footer > div > div > .caption {
+    position: absolute;
+    top: 70px;
+    z-index: 10; 
+    overflow: visible; 
+    cursor: pointer; 
+    pointer-events: auto; 
+    opacity: 1; 
+    width: 100%; 
+    height: 20px; 
+    background-position: 0px 0px; 
+    text-size-adjust: none;
+}
+footer .caption > div {
+    position: absolute;
+    top: 0px; 
+    left: 0px; 
+    transform-origin: 0px 0px 0px; 
+    transform: scale(1); 
+    width: 100%; 
+    height: 100%; 
+    font-size: 12px;
+    line-height: normal; 
+    visibility: visible;
+}
+footer .caption > div > div {
+    position: absolute;
+    white-space: nowrap; 
+    width: 100%; 
+    overflow: hidden; 
+    background-color: rgba(0, 0, 0, 0.498039); 
+    text-shadow: rgba(0, 0, 0, 0.498039) 1px 1px 3.2px;
+}
+footer .caption > div > div > div {
+    margin: 3px 2px 3px 2px;
+    color: #FFF; 
+    font-size: 12px;
+}
+footer .active .caption > div > div > div {
+    color: rgb(246, 166, 0);
+}
+
+a[title=到百度地图查看此区域] {
+    display: none;
+}

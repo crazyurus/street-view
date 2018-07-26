@@ -1,0 +1,182 @@
+<?php
+if(preg_match('/yiban/', $_SERVER['HTTP_USER_AGENT'])) header('Location: https://web.wutnews.net/street');
+elseif(preg_match('/android|iphone/i', $_SERVER['HTTP_USER_AGENT'])) header('location: https://view.wutnews.net/mobile.php');
+?>
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<title>武汉理工大学全景校园</title>
+		<script type="text/javascript" src="./assets/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="./assets/jquery.textPlaceholder.js"></script>
+		<script type="text/javascript" src="./assets/jQuery.textSlider.js"></script>
+		<script type="text/javascript" src="./assets/responsiveslides.min.js"></script>
+		<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=kZy544isO4fZ8nF6x5YqbzX2OHzS1MvF&s=1"></script>
+		<link href="./assets/main.css" rel="stylesheet" type="text/css">
+		<link href="./assets/responsiveslides.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			#mapContainer {
+				height: 600px;
+				padding: 0;
+				margin: 10px 0;
+			}
+			.side_bar button {
+				margin-top: 20px;
+			    height: 30px;
+			    width: 80px;
+			    background: #aa1d38;
+			    border: 0;
+			    color: #fff;
+			    cursor: pointer;
+			    outline: none;
+			}
+			.side_bar p {
+				text-align: center;
+				line-height: 2;
+			}
+		</style>
+	</head>
+
+	<body style="">
+
+		<div class="nav">
+			<div class="wrap">
+				<ul>
+					<li>
+						<a href="http://www.whut.edu.cn/index.htm">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+					</li>
+					<li>
+						<a href="http://www.whut.edu.cn/2015web/xxgk/" target="_blank">学校概况</a>
+					</li>
+					<li>
+						<a href="http://www.whut.edu.cn/2015web/szdw/" target="_blank">师资队伍</a>
+					</li>
+					<li>
+						<a href="http://www.whut.edu.cn/2015web/rcpy/" target="_blank">人才培养</a>
+					</li>
+					<li>
+						<a href="http://www.whut.edu.cn/2015web/kxyj/" target="_blank">科学研究</a>
+					</li>
+					<li>
+						<a href="http://www.whut.edu.cn/2015web/gjjy/" target="_blank">国际教育</a>
+					</li>
+					<li>
+						<a href="http://www.whut.edu.cn/2015web/hzjl/" target="_blank">合作交流</a>
+					</li>
+					<li>
+						<a href="http://www.whut.edu.cn/2015web/xywh/" target="_blank">校园文化</a>
+					</li>
+					<li>
+						<a href="http://www.whut.edu.cn/2015web/zsjy/" target="_blank">招生就业</a>
+					</li>
+					<li>
+						<a href="http://www.whut.edu.cn/2015web/rczp/" target="_blank">人才招聘</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="header">
+			<div class="wrap">
+				<div class="logo"><img src="./assets/whutlogo.png"></div>
+				<div class="slogan">厚德博学&nbsp;&nbsp;追求卓越</div>
+				<div class="ver_link">
+					<a href="http://www.whut.edu.cn/whut/wvpn.pl" target="_blank">综合信息服务系统</a>&nbsp;/&nbsp;
+					<a href="http://english.whut.edu.cn/">English Ver</a>
+				</div>
+				<div class="search_box">
+					<div class="s_input"><input class="ainput" type="text" placeholder="请输入关键词"></div>
+					<button>搜&nbsp;索</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="in_main">
+			<div class="wrap">
+				<div class="bread_nav">
+					当前位置：&nbsp;&nbsp;
+					<a href="http://www.whut.edu.cn/2015web/" title="首页" class="CurrChnlCls">首页</a>&nbsp;&gt;&nbsp;<a href="/" title="全景校园" class="CurrChnlCls">全景校园</a>
+				</div>
+				<div class="side_bar">
+					<div class="side_nav">
+						<ul>
+							<li>
+								<a href="#" data-lat="30.527935" data-lng="114.355014" data-id="09000200011604180911073552H">马房山校区西院</a>
+							</li>
+							<li>
+								<a href="#" data-lat="30.526220" data-lng="114.360871" data-id="09000200011604191043080622H">马房山校区东院</a>
+							</li>
+							<li>
+								<a href="#" data-lat="30.518466" data-lng="114.350217" data-id="09000200011604171104132232H">南湖校区北院（鉴湖）</a>
+							</li>
+							<li>
+								<a href="#" data-lat="30.517572" data-lng="114.340448" data-id="09000200011604131200153759H">南湖校区南院</a>
+							</li>
+							<li>
+								<a href="#" data-lat="30.615262" data-lng="114.363284" data-id="09000200011604131144533889Q">余家头校区</a>
+							</li>
+							<li>
+								<a href="#" data-lat="30.510474" data-lng="114.349319" data-id="09000200011604131045243479H">升升公寓</a>
+							</li>
+						</ul>
+					</div>
+					<p><button onclick="requestFullScreen();">全屏浏览</button>　
+					<button id="btnAlbum" onclick="toggleAlbum();">隐藏相册</button>　
+					<button onclick="window.open('http://sighttp.qq.com/authd?IDKEY=0182a8482a57fa496fed0928e631479afecd442dff65c508');">反馈</button></p>
+					<p>&nbsp;</p>
+					<p><img src="./assets/qrcode.png" src="二维码"></p>
+					<p><strong>扫一扫，在手机上浏览街景</strong></p>
+					<p><a href="./previous" style="color:#aa1d38;line-height: 3;">旧版链接</a></p>
+				</div>
+				<div class="in_content" id="mapContainer">
+				</div>
+			</div>
+
+			<div class="foot">
+				<div class="wrap">
+					<div class="left_link">
+						<a href="http://sfc.whut.edu.cn/">社发处</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://xyh.whut.edu.cn/">校友会</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://edf.whut.edu.cn/">基金会</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://www.whut.edu.cn/2015web/dsh/index.htm">董事会</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<br>
+						<a href="http://jwc.whut.edu.cn/">教务处</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://kfy.whut.edu.cn/">科发院</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://gd.whut.edu.cn/">研究生院</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://pub2.whut.edu.cn/rshc">人事处</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<br>
+						<a href="http://zhaopin.whut.edu.cn/">人才招聘网</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://stuplaza.whut.edu.cn/">学工广场</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://youth.whut.edu.cn/">理工青年</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://vision.whut.edu.cn/">光影魅力摄影网</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<br>
+						<a href="http://xxgk.whut.edu.cn/">信息公开</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://dept.whut.edu.cn/ztbw/">招投标网</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://yqgx.whut.edu.cn/">仪器共享</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://view.wutnews.net/">全景校园</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+
+					<div class="copyright">
+						<div class="sydw">
+							<a href="http://www.whut.edu.cn/2015web/xxgk/#"><img src="./assets/blue.png"></a>
+						</div>
+						<div class="copytext">
+							<p>版权所有 © 武汉理工大学Token团队 &nbsp;&nbsp;&nbsp;&nbsp;</p>
+							<p>地址：湖北省武汉市珞狮路122号 &nbsp;&nbsp;邮编：430070 </p>
+							<p>邮箱：<a href="mailto:token@wutnews.net">token@wutnews.net</a> &nbsp;&nbsp; 电话：<a href="tel:02787855617">027-87855617</a></p>
+							<p>
+								<a href="http://www.miitbeian.gov.cn/">鄂ICP备08001841号</a> &nbsp;&nbsp;&nbsp;&nbsp;
+								<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011102000200"><img src="./assets/gaba.png"> 鄂公网安备42011102000200号</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./assets/whut.js"></script>
+	</body>
+
+</html>

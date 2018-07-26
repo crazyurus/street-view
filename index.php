@@ -1,5 +1,4 @@
 <?php
-//if(preg_match('/yiban/', $_SERVER['HTTP_USER_AGENT'])) header('location: https://web.wutnews.net/street');
 if(preg_match('/android|iphone/i', $_SERVER['HTTP_USER_AGENT'])) header('location: '.($_SERVER['HTTPS'] == 'on' ? 'https' : 'http').'://view.wutnews.net/mobile.php');
 ?>
 <!DOCTYPE html>

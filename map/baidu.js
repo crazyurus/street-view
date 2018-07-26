@@ -5,7 +5,8 @@ define(function() {
 			index = index || 0;
 			this.panorama = new BMap.Panorama(element, {
 			    navigationControl: this.controls.navigation.status,
-			    albumsControl: this.controls.album.status
+			    albumsControl: this.controls.album.status,
+			    linksControl: true
 			});
 			this.create(this.area[index]);
 		},
@@ -67,6 +68,6 @@ define(function() {
 				}
 			}
 		},
-		area: ['09000200011604180911073552H', '09000200011604191043080622H', '09000200011604171104132232H', '09000200011604131200153759H', '09000200011604131144533889Q', '09000200011604131045243479H']
+		area: ['09000200121706171148279662N', '09000200121706161334011109Q', '09000200121706161353319232N', '09000200011604131200153759H', '09000200121705221602296249P', '09000200121706061639456702N']
 	};
 });

@@ -68,7 +68,7 @@ elseif(preg_match('/android|iphone/i', $_SERVER['HTTP_USER_AGENT'])) header('loc
 		</section>
 
 		<footer>
-			<p>&copy; <?php echo date('Y'); ?> 武汉理工大学经纬网 & 武汉理工大学校史馆.</p>
+			<p>&copy; <?php echo date('Y'); ?> 武汉理工大学校史馆.</p>
 			<p>Powered By <a href="http://token.team/" style="text-decoration: underline;color: #eee" target="_blank" title="武汉理工大学Token团队">Token团队</a></p>
 		</footer>
 

@@ -113,7 +113,7 @@ $(document).ready(function() {
 	});
 
 	$("#btnFeedback").click(function() {
-		window.open('http://sighttp.qq.com/authd?IDKEY=0182a8482a57fa496fed0928e631479afecd442dff65c508');
+		window.open('https://support.qq.com/products/23796');
 	});
 
 	$("#btnMobile").click(function() {

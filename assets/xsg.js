@@ -193,6 +193,3 @@ $(document).ready(function() {
 		});
 	}
 });
-
-var _hmt = _hmt || [];
-require(["https://hm.baidu.com/hm.js?03e5867527c2fde768c38612cb4848bf"]);

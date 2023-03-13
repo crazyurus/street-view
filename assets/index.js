@@ -1,10 +1,10 @@
 var paths = {
 	"lib/baidu": "//api.map.baidu.com/api?v=2.0&ak=kZy544isO4fZ8nF6x5YqbzX2OHzS1MvF&s=1&callback=callback",
 	"lib/tencent": "//map.qq.com/api/js?v=2.exp&libraries=convertor&key=527BZ-YISWP-L5UDG-LYWEM-2MNE2-Q4BZY&callback=callback",
-    "lib/amap": "//webapi.amap.com/maps?v=1.3&key=5266a04c8f939b3e846a522e110133fa&plugin=AMap.Scale&callback=callback"　　　　
+    "lib/amap": "//webapi.amap.com/maps?v=1.3&key=5266a04c8f939b3e846a522e110133fa&plugin=AMap.Scale&callback=callback"
 }, current;
-require.config({　　　　
-    paths: paths　
+require.config({
+    paths: paths
 });
 window.alert = layer.msg;
 
@@ -15,7 +15,7 @@ layer.tips('武汉理工大学Token团队', '#author', {
 
 $(document).ready(function() {
 
-	var map, type = storage.has('type') ? storage.get('type') : "baidu";
+	var map, type = storage.has('type') ? storage.get('type') : "amap";
 	init(type);
 	$("#dataType").val(type);
 
@@ -50,7 +50,7 @@ $(document).ready(function() {
 			navigator.geolocation.getCurrentPosition(function(position) {
 				var lat = position.coords.latitude;
 				var lng = position.coords.longitude;
-				
+
 				map.position.set.bind(map)(lng, lat);
 				$("#area").text('定位').data("id", 6);
 				$this.prop('disabled', false).text('定位');
@@ -193,6 +193,3 @@ $(document).ready(function() {
 		});
 	}
 });
-
-var _hmt = _hmt || [];
-require(["https://hm.baidu.com/hm.js?03e5867527c2fde768c38612cb4848bf"]);

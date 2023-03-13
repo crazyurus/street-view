@@ -1,7 +1,3 @@
-<?php
-if(preg_match('/yiban/', $_SERVER['HTTP_USER_AGENT'])) header('Location: https://web.wutnews.net/street');
-elseif(preg_match('/android|iphone/i', $_SERVER['HTTP_USER_AGENT'])) header('location: https://view.wutnews.net/mobile.php');
-?>
 <!DOCTYPE html>
 
 <html>
@@ -10,7 +6,7 @@ elseif(preg_match('/android|iphone/i', $_SERVER['HTTP_USER_AGENT'])) header('loc
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 		<title>武汉理工大学全景校园</title>
-		<script type="text/javascript" src="./assets/jquery-1.10.2.min.js"></script>
+		<script src="//apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script type="text/javascript" src="./assets/jquery.textPlaceholder.js"></script>
 		<script type="text/javascript" src="./assets/jQuery.textSlider.js"></script>
 		<script type="text/javascript" src="./assets/responsiveslides.min.js"></script>
@@ -40,8 +36,7 @@ elseif(preg_match('/android|iphone/i', $_SERVER['HTTP_USER_AGENT'])) header('loc
 		</style>
 	</head>
 
-	<body style="">
-
+	<body>
 		<div class="nav">
 			<div class="wrap">
 				<ul>

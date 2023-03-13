@@ -1,6 +1,3 @@
-<?php
-if(preg_match('/android|iphone/i', $_SERVER['HTTP_USER_AGENT'])) header('location: '.($_SERVER['HTTPS'] == 'on' ? 'https' : 'http').'://view.wutnews.net/mobile.php');
-?>
 <!DOCTYPE html>
 
 <html>
@@ -13,29 +10,23 @@ if(preg_match('/android|iphone/i', $_SERVER['HTTP_USER_AGENT'])) header('locatio
 		<title>武汉理工大学全景校园</title>
 		<link href="./assets/main.css" rel="stylesheet" type="text/css">
 		<link href="./assets/index.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			/*#mapContainer {
+				height: calc(100% - 98px);
+			}*/
+			.head-right {
+				margin-top: 24px;
+			}
+		</style>
 	</head>
 
 	<body>
 		<header>
 			<div class="head-right">
-				<div class="head-choose">
-					全景类型：
-					<select id="dataType" style="margin-right: 18px;">
-						<option selected value="baidu">街景</option>
-						<option value="720yun">航拍</option>
-						<option value="amap">卫星</option>
-					</select><button id="btnPosition" style="margin-right: 18px;">定位</button><button id="btnFeedback">反馈</button>
-					<!--数据来源：-->
-					<select id="dataSource" style="display: none">
-						<option selected value="baidu">百度</option>
-						<option value="tencent">腾讯</option>
-					</select>
-				</div>
 				<div class="head-button">
-					<button id="btnSwitch">切换校区</button>　
-					<button id="btnFull">全屏浏览</button>　
-					<button id="btnAlbum">显示相册</button>　
-					<button id="btnMap">查看地图</button>　
+					<button class="source" data-type="street">街景</button>　
+					<button class="source" data-type="aerial">航拍</button>　
+					<button class="source" data-type="satellite">卫星</button>　
 					<button id="btnMobile">手机版</button>
 				</div>
 			</div>
@@ -73,8 +64,8 @@ if(preg_match('/android|iphone/i', $_SERVER['HTTP_USER_AGENT'])) header('locatio
 		</section>
 
 		<footer>
-			<p>&copy; <?php echo date('Y'); ?> 武汉理工大学经纬网.　All Rights Reserved.</p>
-			<p>Powered By <a href="http://token.team/" style="text-decoration: underline;color: #eee" target="_blank" id="author" title="武汉理工大学Token团队">Token团队</a></p>
+			<p>&copy; 2023 武汉理工大学校史馆.</p>
+			<p>Powered By <a href="http://token.team/" style="text-decoration: underline;color: #eee" target="_blank" title="武汉理工大学Token团队">Token团队</a></p>
 		</footer>
 
 		<div class="mask">
@@ -87,7 +78,7 @@ if(preg_match('/android|iphone/i', $_SERVER['HTTP_USER_AGENT'])) header('locatio
 		<script src="./vendor/layer.js"></script>
 		<script src="./vendor/require.js"></script>
 		<script src="./vendor/storage.js"></script>
-		<script src="./assets/index.js?ver=20171202"></script>
+		<script src="./assets/xsg.js?ver=20171202"></script>
 	</body>
 
 </html>

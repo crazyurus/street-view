@@ -1,0 +1,360 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Helvetica, Tahoma, Arial, PingFang SC, Hiragino Sans GB, Heiti SC,
+    Microsoft YaHei, WenQuanYi Micro Hei, sans-serif !important;
+  vertical-align: baseline;
+}
+
+button,
+select {
+  line-height: 1;
+  font-size: 14px;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+a[title="到百度地图查看此区域"],
+a[title="到百度地图查看此区域"] + div,
+a[title="到腾讯地图查看此区域"],
+.amap-logo,
+.amap-copyright,
+.layui-layer-min {
+  display: none !important;
+}
+
+a {
+  text-decoration: none;
+}
+a:link,
+a:active {
+  color: #555;
+}
+a:hover {
+  color: #aa1d38;
+}
+a:visited {
+  color: #777;
+}
+
+header {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: absolute;
+  box-shadow: 0 0 3px 2px rgba(100, 100, 100, 0.26);
+  z-index: 100000;
+  background-color: white;
+  width: 100%;
+}
+header::-webkit-scrollbar {
+  display: none;
+}
+header .nav-button-container {
+  width: 600px;
+}
+header .nav-button-container .nav-button {
+  margin: 0;
+  width: 100px;
+  display: table-cell;
+}
+header .nav-button-container .nav-button span {
+  color: #7a7a7a;
+  display: block;
+  line-height: 24px;
+  text-align: center;
+  margin: 12px 5px;
+}
+header .nav-button-container .nav-button.active span {
+  color: #000000;
+}
+header #selection-indicator {
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  background-color: #2f8ece;
+  bottom: 0;
+  left: 0;
+  transition: left 0.16s ease-in-out;
+}
+
+#main-frame {
+  width: 100%;
+  height: calc(100% - 48px);
+  top: 48px;
+  position: absolute;
+}
+#main-frame iframe {
+  width: 100%;
+  height: calc(100% + 150px);
+}
+
+#loading-screen {
+  width: 100%;
+  height: calc(100% - 48px);
+  background-color: #eeeeee;
+  top: 48px;
+  position: absolute;
+}
+#loading-screen span {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  transform: translateY(calc(100% - 160px + 48px));
+}
+
+#panel {
+  height: 280px;
+  bottom: -260px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 3px 2px rgba(100, 100, 100, 0.26);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  will-change: bottom;
+}
+#panel #panel-handle {
+  width: 100%;
+  height: 20px;
+}
+#panel #panel-handle:focus,
+#panel #panel-handle:hover {
+  cursor: grab;
+}
+#panel #panel-handle:active {
+  cursor: grabbing;
+}
+#panel #panel-handle #panel-handle-icon {
+  width: 40px;
+  height: 6px;
+  margin: 7px auto;
+  border-radius: 6px;
+  background-color: #dadce0;
+}
+#panel #function-panel {
+  position: absolute;
+  height: 52px;
+  width: 52px;
+  right: 0;
+  top: -80px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+}
+#panel #function-panel .function-panel-button {
+  width: 52px;
+  height: 52px;
+  display: inline-block;
+  background-color: #2f8ece;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+#panel #function-panel .function-panel-button.loading {
+  animation: rotate 2s linear infinite;
+}
+#panel #function-panel .function-panel-button svg {
+  width: 28px;
+  height: 28px;
+  margin: 12px;
+}
+#panel hr {
+  background-color: #eaeaea;
+  width: 80%;
+  border: 0;
+  height: 1px;
+  box-shadow: 0 1px #cccccc;
+  margin: 20px auto;
+}
+#panel #copyright {
+  display: flex;
+  font-size: 12px;
+  padding: 5px 10%;
+  line-height: 2em;
+  flex-direction: column;
+  white-space: nowrap;
+  text-align: center;
+}
+#panel #feedback-button {
+  padding: 2px 10px;
+  border-radius: 20px;
+  line-height: 18px;
+  font-size: 14px;
+  position: absolute;
+  top: 32px;
+  right: 10%;
+  border: 1px solid #2f8ece;
+  background-color: #fff;
+}
+#panel #feedback-button svg {
+  width: 14px;
+  height: 14px;
+  margin-bottom: -3px;
+  filter: brightness(0.5) sepia(1) saturate(10000%) hue-rotate(205deg)
+    opacity(0.7);
+}
+#panel #feedback-button a {
+  color: #2e8ece;
+}
+#panel #location-select {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  padding: 0 14px;
+}
+#panel #location-select div.active div {
+  background-color: #2f8ece;
+}
+#panel #location-select div {
+  text-align: center;
+  flex: 1;
+  cursor: pointer;
+}
+#panel #location-select div div {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  background-color: #949494;
+  margin: 16px auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+#panel #location-select div div svg {
+  width: 32px;
+  height: 32px;
+  margin: 12px;
+}
+
+h2 {
+  color: rgba(0, 0, 0, 0.87);
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 12px 0 0;
+  text-align: center;
+  text-transform: none;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.Theme1_component_k85rpQ {
+  display: none !important;
+}
